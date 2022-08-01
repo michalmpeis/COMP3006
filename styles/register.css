@@ -1,0 +1,45 @@
+.main{
+    background: #e5e5e5;
+    position: absolute;
+    padding:20px;
+    font-family: 'Helvetica', serif;
+    box-shadow: 0 0 15px 15px #450979;
+    width: 400px;
+    left: 750px;
+    top: 200px;
+
+
+}
+.main h1{
+    font-size: 40px;
+    text-align:center;
+    font-family: 'Helvetica', serif;
+    color: #212121;
+
+}
+input{
+    font-family: 'Helvetica', serif;
+    background-color: #cdcdcd;
+    width: 100%;
+    font-size: 20px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: none;
+    border-bottom: 2px solid #767474;
+    color: #212121;
+}
+input[type=submit] {
+    font-family: 'Helvetica', serif;
+    width: 100%;
+    background-color: cornflowerblue;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    margin: 4px 2px;
+    border-radius: 10px;
+}
+
+body {
+    background: rgb(69,9,121);
+    background: linear-gradient(90deg, rgba(69,9,121,1) 0%, rgba(0,212,255,1) 50%, rgba(69,9,121,1) 100%);
+}
