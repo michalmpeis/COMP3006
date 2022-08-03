@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Student budget</title>
+  <link rel="shortcut icon" href="styles/assets/coins.png">
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles/dark-mode.css">
+  <link rel="stylesheet" type="text/css" href="styles/login.css">
+
+</head>
+<body>
+
+<% if (messages.error) { %>
+  <%= messages.error %>
+<% } %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6 main">
+      <form action="/login" method="POST">
+
+        <h1> Login </h1>
+
+        <input class="box" type="email" name="email" id="email"
+               placeholder="E-Mail " required /><br>
+
+        <input class="box" type="password" name="password"
+               id="password" placeholder="Password " required/><br>
+
+        <br>
+        <input class="rounded-pill" type="submit" id="submitDetails"
+               name="submitDetails" value="Login" /><br>
+
+      </form>
+      <a href="/register">Register</a>
+    </div>
+
+  </div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>

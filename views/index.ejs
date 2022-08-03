@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/styles/style.css">
+  <link rel="stylesheet" href="/styles/Index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/styles/dark-mode.css">
+  <title>Student Budget</title>
+</head>
+
+<body>
+<!--Nav Bar-->
+<nav class="navbar navbar-expand-lg navbar-light">
+  <a class="navbar-brand" href="/">Student Budget</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="/">Overview <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="/income">Income</a>
+      <a class="nav-item nav-link" href="/expenses">Outgoing Expenses</a>
+    </div>
+    <div class="custom-control custom-switch">
+      <input type="checkbox" class="custom-control-input" id="darkSwitch" />
+      <label class="custom-control-label" for="darkSwitch">Dark Mode</label>
+    </div>
+  </div>
+</nav>
+<!--End of Nav Bar-->
+
+
+<div class="buttons rounded-pill">
+  <div>
+    <button class="btn-lg dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Jun-2022
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+    </div>
+  </div>
+
+  <div>
+    <button class="btn-lg dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      General
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+    </div>
+  </div>
+</div>
+
+<div class="black-box rounded">
+
+  <div>
+    <pie-chart id="pieChart">
+      <pchart-element name="Accommodation" value="460" colour="#00A676">
+        <pchart-element name="Groceries" value="100" colour="#373F51">
+          <pchart-element name="Eating Out" value="90" colour="#008DD5">
+            <pchart-element name="Night Out" value="100" colour="#DFBBB1">
+              <pchart-element name="Other Expenses" value="75" colour="#F56476">
+              </pchart-element>
+            </pchart-element>
+          </pchart-element>
+        </pchart-element>
+      </pchart-element>
+    </pie-chart>
+  </div>
+
+  <!-- Button trigger modal -->
+  <button type="button" class="btn" id="maximum-budget" data-toggle="modal" data-target="#alter-budget">
+    <a>Income</a>
+    1000£
+    <svg id="wrench" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-wrench" viewBox="0 0 15 17">
+      <path d="M.102 2.223A3.004 3.004 0 0 0 3.78 5.897l6.341 6.252A3.003 3.003 0 0 0 13 16a3 3 0 1 0-.851-5.878L5.897 3.781A3.004 3.004 0 0 0 2.223.1l2.141 2.142L4 4l-1.757.364L.102 2.223zm13.37 9.019.528.026.287.445.445.287.026.529L15 13l-.242.471-.026.529-.445.287-.287.445-.529.026L13 15l-.471-.242-.529-.026-.287-.445-.445-.287-.026-.529L11 13l.242-.471.026-.529.445-.287.287-.445.529-.026L13 11l.471.242z"/>
+    </svg>
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="alter-budget" tabindex="-1" role="dialog" aria-labelledby="budget" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="budget">Edit income</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="input-group">
+            <input type="text" class="form-control">
+            <div class="input-group-append">
+              <span class="input-group-text">£</span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary rounded-pill" data-dismiss="modal">Close</button>
+          <input type="submit" id="submitIncome" class="btn btn-primary rounded-pill" name="submitIncome" value="Save"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--Sidebar-->
+<div class="wrapper d-flex align-items-stretch">
+  <nav id="sidebar">
+    <div class="custom-menu">
+      <button type="button" id="sidebarCollapse" class="btn btn-primary">
+      </button>
+    </div>
+    <div class="img bg-wrap text-center py-4" style="background-image: url(styles/assets/barchart.jpg);">
+      <div class="user-logo">
+        <div class="img" style="background-image: url(styles/assets/coins.png);"></div>
+        <h3><%= name %></h3>
+      </div>
+    </div>
+
+    <ul class="list-unstyled components mb-3">
+      <li class="active">
+        <a href="/"><span class="fa fa-home mr-3"></span> Overview</a>
+      </li>
+      <li>
+        <a href="/income"><span class="fa fa-download mr-3"></span> Income</a>
+      </li>
+      <li>
+        <a href="/expenses"><span class="fa fa-money mr-3"></span> Expenses</a>
+      </li>
+      <li>
+        <a href="/settings"><span class="fa fa-cog mr-3"></span> Settings</a>
+      </li>
+      <li>
+        <a href="/contact"><span class="fa fa-phone mr-3"></span> Contact</a>
+      </li>
+      <li>
+        <form id="logout" action="/logout?_method=DELETE" method="POST">
+          <!-- form elements -->
+          <a href="#" onclick="document.getElementById('logout').submit()"><span class="fa fa-sign-out mr-3"></span> Sign Out</a>
+        </form>
+      </li>
+    </ul>
+    <div class="credits">
+      <p><br>Copyright &copy; 2022 <br>Student Budget
+
+        <br><br>Alexandros Michalmpeis</p>
+    </div>
+  </nav>
+</div>
+<!--End of Sidebar-->
+
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/index.js"></script>
+<script src="/js/pie-chart-js.js"></script>
+<script src="js/dark-mode-switch.min.js"></script>
+</body>
+</html>
+
