@@ -59,6 +59,10 @@ app.get('/settings', checkAuthenticated, (req, res) => {
     res.render('settings.ejs', { name: req.user.name })
 })
 
+app.get('/myprofile', checkAuthenticated, (req, res) => {
+    res.render('myprofile.ejs', { name: req.user.name, email: req.user.email })
+})
+
 app.post('/login', checkNotAuthenticated, passport.authenticate('local', {
     successRedirect: '/',
     failureRedirect: '/login',

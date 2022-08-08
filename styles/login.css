@@ -7,6 +7,7 @@
     width: 400px;
     left: 750px;
     top: 250px;
+    border-radius: 20px;
 
 
 }
@@ -27,6 +28,7 @@ input{
     border: none;
     border-bottom: 2px solid #767474;
     color: #212121;
+    border-radius: 10px;
 }
 input[type=submit] {
     font-family: 'Helvetica', serif;
@@ -35,6 +37,25 @@ input[type=submit] {
     border: none;
     color: white;
     padding: 16px 32px;
+    margin: 4px 2px;
+    border-radius: 10px;
+}
+
+.or {
+    top: 355px;
+    position: absolute;
+    font-size: 15px;
+    color: #3d3d3d;
+
+}
+
+.register {
+    font-family: 'Helvetica', serif;
+    width: 100%;
+    background-color: cornflowerblue;
+    border: none;
+    color: white;
+    padding: 4px 32px;
     margin: 4px 2px;
     border-radius: 10px;
 }

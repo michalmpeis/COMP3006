@@ -80,7 +80,7 @@ body {
         top: 10px !important; } }
 #sidebar .custom-menu {
     display: inline-block;
-    position: absolute;
+    position: relative;
     top: 20px;
     right: 25px;
     margin-right: -35px;
@@ -100,7 +100,7 @@ body {
     width: 30px;
     height: 30px; }
 #sidebar .custom-menu .btn.btn-primary:after, #sidebar .custom-menu .btn.btn-primary:before {
-    position: absolute;
+    position: relative;
     top: 2px;
     left: 0;
     right: 0;
