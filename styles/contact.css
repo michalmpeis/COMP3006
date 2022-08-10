@@ -80,7 +80,7 @@ body {
         top: 10px !important; } }
 #sidebar .custom-menu {
     display: inline-block;
-    position: absolute;
+    position: relative;
     top: 20px;
     right: 25px;
     margin-right: -35px;
@@ -100,7 +100,7 @@ body {
     width: 30px;
     height: 30px; }
 #sidebar .custom-menu .btn.btn-primary:after, #sidebar .custom-menu .btn.btn-primary:before {
-    position: absolute;
+    position: relative;
     top: 2px;
     left: 0;
     right: 0;
@@ -158,11 +158,11 @@ body {
     color: #2f89fc;
 }
 
-.black-box {
+.income-box {
     background-color: #e5e5e5;
     position: absolute;
-    left: 60px;
-    top: 250px;
+    left: 360px;
+    top: 200px;
     width: 1100px;
     height: 550px;
     box-shadow: 0 0 30px #212121;
@@ -183,4 +183,37 @@ body {
     left: 300px;
     width: 800px;
     height: 560px;
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical
+}
+
+
+input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
 }

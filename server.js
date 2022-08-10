@@ -6,6 +6,18 @@ const passport = require('passport')
 const flash = require('express-flash')
 const session = require('express-session')
 const methodOverride = require('method-override')
+require("dotenv").config();
+const mongoose = require("mongoose")
+
+// DB Connection
+mongoose.connect(process.env.DATABASE, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}).then(() => {
+    console.log("DB CONNECTED")
+}).catch(() => {
+    console.log("UNABLE to connect to DB")
+})
 
 //initializing passport for authentication
 const initializePassport = require('./passport-config')
@@ -23,7 +35,7 @@ app.use('/scss', express.static('scss'));
 app.use('/js', express.static('js'));
 app.use('/views', express.static('views'));
 
-
+//Declare view engine
 app.set('view-engine', 'ejs')
 app.use(express.urlencoded({ extended: false }))
 app.use(flash())
@@ -31,10 +43,12 @@ app.use(session({ secret: 'mixalmpeis' ,
     resave: false,
     saveUninitialized: false
 }));
+
 app.use(passport.initialize())
 app.use(passport.session())
 app.use(methodOverride('_method'))
 
+//Declare views
 app.get('/', checkAuthenticated, (req, res) => {
     res.render('index.ejs', { name: req.user.name })
 })
@@ -63,6 +77,7 @@ app.get('/myprofile', checkAuthenticated, (req, res) => {
     res.render('myprofile.ejs', { name: req.user.name, email: req.user.email })
 })
 
+//post login
 app.post('/login', checkNotAuthenticated, passport.authenticate('local', {
     successRedirect: '/',
     failureRedirect: '/login',
@@ -73,6 +88,7 @@ app.get('/register', checkNotAuthenticated, (req, res) => {
     res.render('register.ejs')
 })
 
+//post register data
 app.post('/register', checkNotAuthenticated, async (req, res) => {
     try {
         const hashedPassword = await bcrypt.hash(req.body.password, 10)
@@ -88,6 +104,7 @@ app.post('/register', checkNotAuthenticated, async (req, res) => {
     }
 })
 
+//logout
 app.delete('/logout', (req, res) => {
     req.logOut(function(err) {
         if (err) { return (err); }
@@ -109,5 +126,7 @@ function checkNotAuthenticated(req, res, next) {
     }
     next()
 }
+
+module.exports = app;
 
 app.listen(9000)

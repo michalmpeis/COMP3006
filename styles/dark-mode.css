@@ -213,9 +213,10 @@
   border-radius: .25rem;
 }
 
-[data-theme="dark"] .gutters-sm {
-  background-color: #212121;
-}
 [data-theme="dark"] .mb-0 {
   color: #86cfda;
+}
+
+[data-theme="dark"] .income-box {
+  color: #212121;
 }
